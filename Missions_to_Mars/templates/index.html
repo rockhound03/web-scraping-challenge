@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Templates 101</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Get the Mars</h1>
+      <p>Weather, headlines, best pics, you name it!</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    </div>
+    <h2>{{text_title}}</h2>
+    <div class="jumbotron text-center">
+      <!-- Render our data -->
+      <h4>{{ text }}</h4>
+    </div>
+  </div>
+  <img src="{{ mars_feat_img }}" alt="mars_feature">
+  <div class="container text-center">
+    <h1 class="jumbotron">Mars Daily Weather</h1>
+        <div class="col-lg-4">
+          <div class="card" style="width: 40rem;">
+              <div class="card-body">
+                <h4 class="card-title">{{ mars_weather }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Most recent weather.</h6>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-0" class="visual-1">
+            <div class="jumbotron">
+                <a class="badge badge-danger" class="comp-links">{{hemi_title_1}}</a>
+              
+              <img src="{{hemi_pic_1}}" alt="plot_wind">
+            </div>
+        </div>
+        <div class="col-md-6 col-md-offset-4" class="visual-1">
+            <div class="jumbotron">
+                <a class="badge badge-danger" class="comp-links">{{hemi_title_2}}</a>
+                
+                <img src="{{hemi_pic_2}}" alt="plot_wind">
+          </div>
+        </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-0" class="visual-1">
+      <div class="jumbotron">
+          <a class="badge badge-danger" class="comp-links">{{hemi_title_3}}</a>
+          
+          <img src="{{hemi_pic_3}}" alt="plot_wind">
+          </div>
+  </div>
+  <div class="col-md-6 col-md-offset-4" class="visual-1">
+      <div class="jumbotron">
+          <a class="badge badge-danger" class="comp-links">{{hemi_title_4}}</a>
+          
+          <img src="{{hemi_pic_4}}" alt="plot_wind">
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="container"><table>{{ mars_table }}</table></div>
+</body>
+</html>
