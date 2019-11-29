@@ -39,8 +39,10 @@ def scrape():
         browser.click_link_by_partial_text(name)
         html = browser.html
         soup = BeautifulSoup(html, 'html.parser')
-        test = soup.find_all('a')
-        ref_list.append(test[4]['href'])
+        test = soup.find_all('div', class_='wide-image-wrapper')
+        for image in test:
+            img = "https://web.archive.org/" + image.find_all('img',class_='wide-image')[0]['src']
+            ref_list.append(img)
         browser.back()
 
     hemisphere_image_urls = [{"title" : pic_names[0], "img_url" : ref_list[0]},
