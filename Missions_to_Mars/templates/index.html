@@ -12,6 +12,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -27,32 +28,53 @@
       <h4>{{ text }}</h4>
     </div>
   </div>
-  <img src="{{ mars_feat_img }}" alt="mars_feature">
-  <div class="container text-center">
-    <h1 class="jumbotron">Mars Daily Weather</h1>
-        <div class="col-lg-4">
-          <div class="card" style="width: 40rem;">
-              <div class="card-body">
+
+  <div class="container">
+      <div class="jumbotron text-center">
+        <h1>Mars Featured Picture</h1>
+        <img src="{{ mars_feat_img }}" alt="mars_feature">
+      </div>
+  </div>
+  
+  <div class="container text-center" class="table-card">
+      <h1 class="jumbotron">Mars Daily Weather | Mars Facts</h1>
+    
+
+    <div class="jumbotron" class="table-card">
+        <div class="col-md-5 col-md-offset-0">
+          <div class="jumbotron" class="card" style="width: 40rem;">
+              <div class="card-body" class="weather-card">
+                <h2 class="card-subtitle mb-2 text-muted">Most recent weather.</h2>
                 <h4 class="card-title">{{ mars_weather }}</h4>
-                <h6 class="card-subtitle mb-2 text-muted">Most recent weather.</h6>
               </div>
             </div>
         </div>
+        <div class="col-md-5 col-md-offset-1" class="table-card">
+            <div class="jumbotron" class="card" style="width: 40rem;" class="table-card">
+                <div class="card-body" class="table-card">
+                    <h2 class="card-subtitle mb-2 text-muted">Mars Facts.</h2>
+                    <h4 class="card-title">{{ mars_table |safe }}</h4>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
+
     <div class="container">
+        <h1 class="jumbotron">Mars Hemisphere Pictures</h1>
       <div class="row">
         <div class="col-md-5 col-md-offset-0" class="visual-1">
             <div class="jumbotron">
                 <a class="badge badge-danger" class="comp-links">{{hemi_title_1}}</a>
               
-              <img src="{{hemi_pic_1}}" height="380px" width="380px" alt="mars_1">
+              <img class="mars-hem" src="{{hemi_pic_1}}" height="380px" width="380px" alt="mars_1">
             </div>
         </div>
         <div class="col-md-5 col-md-offset-1" class="visual-1">
             <div class="jumbotron">
                 <a class="badge badge-danger" class="comp-links">{{hemi_title_2}}</a>
                 
-                <img src="{{hemi_pic_2}}" height="380px" width="380px" alt="mars_2">
+                <img class="mars-hem" src="{{hemi_pic_2}}" height="380px" width="380px" alt="mars_2">
           </div>
         </div>
 </div>
@@ -61,18 +83,17 @@
       <div class="jumbotron">
           <a class="badge badge-danger" class="comp-links">{{hemi_title_3}}</a>
           
-          <img src="{{hemi_pic_3}}" height="380px" width="380px" alt="mars_3">
+          <img class="mars-hem" src="{{hemi_pic_3}}" height="380px" width="380px" alt="mars_3">
           </div>
   </div>
   <div class="col-md-5 col-md-offset-1" class="visual-1">
       <div class="jumbotron">
           <a class="badge badge-danger" class="comp-links">{{hemi_title_4}}</a>
           
-          <img src="{{hemi_pic_4}}" height="380px" width="380px" alt="mars_4">
+          <img class="mars-hem" src="{{hemi_pic_4}}" height="380px" width="380px" alt="mars_4">
     </div>
   </div>
 </div>
-    </div>
-    {{ mars_table }}
+</div> 
 </body>
 </html>

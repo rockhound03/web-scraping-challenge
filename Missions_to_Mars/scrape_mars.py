@@ -54,6 +54,7 @@ def scrape():
     mars_fact = pd.read_html(fact_url)
     fact_df = pd.DataFrame(mars_fact[0])
     fact_df.rename(columns = {0:'Statistic',1:'Measured'}, inplace = True)
+    fact_df = fact_df.set_index(['Statistic'])
     mars_facts = fact_df.to_html()  # html table
 
     # Mars weather from Twitter **********************************************
